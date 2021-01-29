@@ -41,9 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
+  - name: BaseLayer
     uniqueID: 3921787883
     locked: 0
-  - name: Player
+  - name: Colliders
     uniqueID: 597031707
+    locked: 0
+  - name: Props
+    uniqueID: 2785016017
+    locked: 0
+  - name: Details
+    uniqueID: 3743245909
+    locked: 0
+  - name: Enemy
+    uniqueID: 4186579949
+    locked: 0
+  - name: Player
+    uniqueID: 3773050787
     locked: 0
