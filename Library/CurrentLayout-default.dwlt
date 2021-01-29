@@ -75,7 +75,7 @@ MonoBehaviour:
   m_MinSize: {x: 876, y: 342}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 152
+  controlID: 59
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 342}
   m_MaxSize: {x: 8003, y: 8042}
   vertical: 1
-  controlID: 56
+  controlID: 60
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 57
+  controlID: 61
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -330,7 +330,7 @@ MonoBehaviour:
     m_CachedPref: 50
     m_ControlHash: 1964396721
     m_PrefName: Preview_TilemapBrushInspector
-  m_Palette: {fileID: 7093123455754704385, guid: 15f44587a9810514ab70e0fc429eca99,
+  m_Palette: {fileID: 2265419028069240679, guid: 083eadcbe5d5fbd41b1de91af5176cdb,
     type: 3}
 --- !u!114 &14
 MonoBehaviour:
@@ -425,7 +425,8 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/Art/Props and Details
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders:
@@ -438,7 +439,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 3c410000
     m_LastClickedID: 16700
-    m_ExpandedIDs: 000000003641000000ca9a3b
+    m_ExpandedIDs: 000000000c3b00000e3b0000103b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -466,7 +467,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000364100003c4100004c540000
+    m_ExpandedIDs: ffffffff000000000c3b00000e3b0000103b00005e3b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -589,9 +590,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 123c0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 8cf4ffff64fbffff383b0000
+      m_ExpandedIDs: 64fbffff46390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -651,9 +652,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.01900278, y: 12.51102, z: -33.841084}
+    m_Target: {x: -1.609307, y: 9.041517, z: -44.044163}
     speed: 2
-    m_Value: {x: 0.050107494, y: 12.636489, z: -33.806503}
+    m_Value: {x: -1.6538311, y: 8.9371195, z: -43.989727}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -703,9 +704,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.177349
+    m_Target: 14.43156
     speed: 2
-    m_Value: 9.60979
+    m_Value: 15.111581
   m_Ortho:
     m_Target: 1
     speed: 2
