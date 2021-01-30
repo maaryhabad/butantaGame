@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed;
-    public int life;
     public int damage;
     public int stamina;
     public bool hasMaskOn;
@@ -32,7 +31,6 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.name == "Mask") {
             hasMaskOn = true;
             other.gameObject.SetActive(false);
-            //Destroy(other.gameObject);
         }
     }
 }

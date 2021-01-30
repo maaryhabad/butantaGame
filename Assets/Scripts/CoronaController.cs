@@ -24,7 +24,9 @@ public class CoronaController : MonoBehaviour
         if(reloading) {
             waitToReload -= Time.deltaTime;
             if(waitToReload < 0) {
-                UnityEngine.SceneManagement.SceneManager.LoadScene("main");
+
+                var actualScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+                UnityEngine.SceneManagement.SceneManager.LoadScene(actualScene.name);
                 thePlayer.SetActive(true);
             }
         }

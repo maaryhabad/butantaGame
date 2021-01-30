@@ -34,12 +34,6 @@ public class PlayerAnimation : MonoBehaviour
         }
        
        anim.SetFloat("Speed", movement.sqrMagnitude);
-        // if (movement != Vector2.zero)
-        // {
-        //     anim.SetFloat("HorizontalIdle", movement.x);
-        //     anim.SetFloat("VerticalIdle", movement.y);
-
-        // }
     }
 }
 
