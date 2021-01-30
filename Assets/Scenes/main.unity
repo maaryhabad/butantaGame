@@ -2207,6 +2207,7 @@ MonoBehaviour:
   life: 3
   damage: 1
   stamina: 0
+  hasMaskOn: 0
 --- !u!70 &241323438
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2294,6 +2295,7 @@ GameObject:
   - component: {fileID: 410441426}
   - component: {fileID: 410441429}
   - component: {fileID: 410441428}
+  - component: {fileID: 410441430}
   m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
@@ -2402,6 +2404,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &410441430
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410441425}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 604a5c8829aaea641a12855ec41b9bee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &507122175
 GameObject:
   m_ObjectHideFlags: 0
@@ -4388,6 +4409,7 @@ GameObject:
   - component: {fileID: 1811391972}
   - component: {fileID: 1811391971}
   - component: {fileID: 1811391975}
+  - component: {fileID: 1811391976}
   m_Layer: 0
   m_Name: Coronga
   m_TagString: Untagged
@@ -4509,3 +4531,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
+--- !u!95 &1811391976
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811391970}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 06be555593e6d6043a6a24db94ea7138, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
