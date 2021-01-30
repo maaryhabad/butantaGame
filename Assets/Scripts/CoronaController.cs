@@ -8,6 +8,9 @@ public class CoronaController : MonoBehaviour
 
     public int damage;
 
+    public float waitToReload;
+    public bool reloading;
+    private GameObject thePlayer;
 
 
     void Start()
@@ -18,7 +21,13 @@ public class CoronaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(reloading) {
+            waitToReload -= Time.deltaTime;
+            if(waitToReload < 0) {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("main");
+                thePlayer.SetActive(true);
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -29,6 +38,8 @@ public class CoronaController : MonoBehaviour
                     player.hasMaskOn = false;
                 } else {
                     other.gameObject.SetActive(false);
+                    reloading = true;
+                    thePlayer = other.gameObject;
                     //Destroy(other.gameObject);
                     //reiniciar a cena
                 }
