@@ -27,19 +27,19 @@ public class PlayerAnimation : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        anim.SetFloat("Horizontal", movement.x);
-        anim.SetFloat("Vertical", movement.y);
-        anim.SetFloat("Speed", movement.sqrMagnitude);
-
-
-
-
-        if (movement != Vector2.zero)
-        {
-            anim.SetFloat("HorizontalIdle", movement.x);
-            anim.SetFloat("VerticalIdle", movement.y);
-
+        
+        if(movement.sqrMagnitude > .1f) {
+            anim.SetFloat("Horizontal", movement.x);
+            anim.SetFloat("Vertical", movement.y);
         }
+       
+       anim.SetFloat("Speed", movement.sqrMagnitude);
+        // if (movement != Vector2.zero)
+        // {
+        //     anim.SetFloat("HorizontalIdle", movement.x);
+        //     anim.SetFloat("VerticalIdle", movement.y);
+
+        // }
     }
 }
 

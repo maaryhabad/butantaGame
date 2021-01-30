@@ -2165,7 +2165,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -521916509
   m_SortingLayer: 6
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f5195f167155b7445b7ff7951792cdae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2189,7 +2189,7 @@ Transform:
   m_LocalScale: {x: 0.94165, y: 0.94165, z: 0.94165}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &241323437
 MonoBehaviour:
@@ -2204,6 +2204,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
+  life: 3
+  damage: 1
+  stamina: 0
 --- !u!70 &241323438
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2259,7 +2262,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &241323441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2356,11 +2359,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410441425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.03, y: 16.89, z: -27.756836}
+  m_LocalPosition: {x: -6.03, y: 16.89, z: 0}
   m_LocalScale: {x: 0.88521, y: 0.88521, z: 0.88521}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &410441428
 CircleCollider2D:
@@ -3753,7 +3756,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1145781424
 GameObject:
@@ -4370,7 +4373,7 @@ Transform:
   - {fileID: 1145781425}
   - {fileID: 522084003}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1811391970
 GameObject:
@@ -4384,6 +4387,7 @@ GameObject:
   - component: {fileID: 1811391973}
   - component: {fileID: 1811391972}
   - component: {fileID: 1811391971}
+  - component: {fileID: 1811391975}
   m_Layer: 0
   m_Name: Coronga
   m_TagString: Untagged
@@ -4427,7 +4431,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1811391973
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4464,8 +4468,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 597031707
-  m_SortingLayer: 2
+  m_SortingLayerID: -108387347
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b95913af12449ec40be13d09bcebade0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4486,9 +4490,22 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1811391970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.549, y: 17.054, z: -60.848877}
+  m_LocalPosition: {x: 6.549, y: 17.054, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1811391975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811391970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cbc4b4ecbce78941be4893235389a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
