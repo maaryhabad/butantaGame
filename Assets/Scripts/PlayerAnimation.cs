@@ -32,8 +32,25 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetFloat("Horizontal", movement.x);
             anim.SetFloat("Vertical", movement.y);
         }
-       
+
        anim.SetFloat("Speed", movement.sqrMagnitude);
+    
+
+    if (timeNextAttack <= 0)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                anim.SetTrigger("mordeu");
+                timeNextAttack = 0.00001f;
+               
+            }
+        }
+
+            else
+        {
+            timeNextAttack -= Time.deltaTime;
+        }
+
     }
 }
 

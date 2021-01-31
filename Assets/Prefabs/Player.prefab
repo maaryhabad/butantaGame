@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  damage: 2
   stamina: 0
   hasMaskOn: 0
   playerMaxHealth: 5
@@ -225,8 +224,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 6838186437444905911}
   speed: 4
-  AtaqueCheck: {fileID: 0}
-  radiusAttack: 0
+  AtaqueCheck: {fileID: 1006870486734895235}
+  radiusAttack: 0.5
   Enemy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
