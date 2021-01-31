@@ -63,6 +63,9 @@ public class EnemyController : MonoBehaviour
                 moveDirection = new Vector3(0f, Random.Range(-1f, 1f) * moveSpeed, 0f);
             }
         }
+
+        anim.SetFloat("Speed", myRigidBody.velocity.y);
+        
     }
 
     void OnTriggerStay2D(Collider2D other) {

@@ -2,22 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
 
     public Slider healthBar;
     public PlayerController player;
-    
-    // Start is called before the first frame update
+
+   
+  
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        if(healthBar != null){
+        
         healthBar.maxValue = player.playerMaxHealth;
         healthBar.value = player.playerCurrentHealth;
+        }
     }
 }

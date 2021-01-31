@@ -162,7 +162,7 @@ MonoBehaviour:
   timeBetweenMove: 2
   timeToMove: 1
   timeToMoveCounter: 0
-  anim: {fileID: 0}
+  anim: {fileID: 3277483773008635849}
   speed: 0
   temp: 0
 --- !u!114 &-1137742396108668761
