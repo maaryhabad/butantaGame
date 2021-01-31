@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4
-  damage: 2
   stamina: 0
   hasMaskOn: 0
   playerMaxHealth: 5

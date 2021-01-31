@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     public bool reloading;
 
     public float temp;
-    private bool immortal;
     private Renderer mainRenderer;
 
     // Start is called before the first frame update
@@ -54,7 +53,6 @@ public class PlayerController : MonoBehaviour
 
         if(other.tag == "projetil") {
             StartCoroutine(PiscarDano());
-            immortal = true;
             Invoke("ResetImortal", temp);
             Vector2 difference = transform.position - other.transform.position;
             transform.position = new Vector2(transform.position.x - difference.x, transform.position.y - difference.y);
@@ -84,12 +82,6 @@ public class PlayerController : MonoBehaviour
             }
         } else {
             reloading = true;
-        }
-        
+        } 
     }
-
-    void resetImmortal() {
-        immortal = false;
-    }
-
 }

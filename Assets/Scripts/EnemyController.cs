@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public float enemyMaxHealth;
     public float enemyCurrentHealth;
 
+    public int deadEnemies;
+
     private Rigidbody2D myRigidBody;
 
     private bool moving;
@@ -26,7 +28,6 @@ public class EnemyController : MonoBehaviour
     private PlayerController player;
 
     public float temp;
-    private bool immortal;
     private Renderer mainRenderer;
 
     // Start is called before the first frame update
@@ -46,7 +47,7 @@ public class EnemyController : MonoBehaviour
         if(moving) {
             timeToMoveCounter -= Time.deltaTime;
             myRigidBody.velocity = moveDirection;
-
+            
             if(timeToMoveCounter < 0f) {
                 GetComponent<Spawner>().SpawnProjetil(player.transform.position);
                 moving = false;
@@ -66,24 +67,21 @@ public class EnemyController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other) {
         if(Input.GetButtonDown("Fire1")) {
-
+            Debug.Log("Ataque");
             if(other.tag == "mordida") {
-                //rodar a animação da mordida
                 EnemyTakeDamage(2);
                 Debug.Log("Inimigo tomou dano");
                 StartCoroutine(PiscarDano());
-                immortal = true;
-                Invoke("ResetImortal", temp);
                 Vector2 difference = transform.position - other.transform.position;
                 transform.position = new Vector2(transform.position.x - difference.x, transform.position.y - difference.y);
             }
             IEnumerator PiscarDano() {
                 for(int i=0; i<temp;i++) {
-                    mainRenderer.enabled = true;
-                    yield return new WaitForSeconds(0.1f);
-                    mainRenderer.enabled = false;
-                    yield return new WaitForSeconds(0.1f);
-                }
+                mainRenderer.enabled = true;
+                yield return new WaitForSeconds(0.1f);
+                mainRenderer.enabled = false;
+                yield return new WaitForSeconds(0.1f);
+            }
             mainRenderer.enabled = true;
             }
         }
@@ -96,11 +94,11 @@ public class EnemyController : MonoBehaviour
             Debug.Log("vida do inimigo: " + enemyCurrentHealth);
             if(enemyCurrentHealth <= 0) {
                 Destroy(gameObject);
+                deadEnemies += 1;
+                Debug.Log(deadEnemies);
+                PlayerPrefs.SetInt("deadEnemies", deadEnemies);
             }
         }
     }
 
-    void resetImmortal() {
-        immortal = false;
-    }
 }
