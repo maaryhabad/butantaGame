@@ -17,7 +17,12 @@ public class EnemyController : MonoBehaviour
     public float timeToMove;
     public float timeToMoveCounter;
 
+    public Animator anim;
+    public float speed;
+
     private Vector3 moveDirection;
+
+    private PlayerController player;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +31,8 @@ public class EnemyController : MonoBehaviour
 
         timeBetweenMoveCounter = timeBetweenMove;
         timeToMoveCounter = timeToMove;
+        player = FindObjectOfType<PlayerController>();
+
     }
 
     // Update is called once per frame
@@ -36,6 +43,8 @@ public class EnemyController : MonoBehaviour
             myRigidBody.velocity = moveDirection;
 
             if(timeToMoveCounter < 0f) {
+                GetComponent<Spawner>().SpawnProjetil(player.transform.position);
+                Debug.Log("Atacou");
                 moving = false;
                 timeBetweenMoveCounter = timeBetweenMove;
             }
@@ -46,7 +55,6 @@ public class EnemyController : MonoBehaviour
             if(timeBetweenMoveCounter < 0f) {
                 moving = true;
                 timeToMoveCounter = timeToMove;
-
                 moveDirection = new Vector3(0f, Random.Range(-1f, 1f) * moveSpeed, 0f);
             }
         }

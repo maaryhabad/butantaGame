@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CoronaController : MonoBehaviour
 {
@@ -21,15 +22,7 @@ public class CoronaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(reloading) {
-            waitToReload -= Time.deltaTime;
-            if(waitToReload < 0) {
 
-                var actualScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-                UnityEngine.SceneManagement.SceneManager.LoadScene(actualScene.name);
-                thePlayer.SetActive(true);
-            }
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other) {
@@ -39,11 +32,8 @@ public class CoronaController : MonoBehaviour
                 if(player.hasMaskOn) {
                     player.hasMaskOn = false;
                 } else {
-                    other.gameObject.SetActive(false);
-                    reloading = true;
-                    thePlayer = other.gameObject;
-                    //Destroy(other.gameObject);
-                    //reiniciar a cena
+                    player.TakeDamage(5);
+
                 }
             }      
         }
