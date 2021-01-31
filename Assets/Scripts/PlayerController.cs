@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.name == "Mask") {
             hasMaskOn = true;
             other.gameObject.SetActive(false);
+            GameObject.Find("MaskSound").GetComponent<AudioSource>().Play();
         }
 
         if(other.tag == "projetil") {
