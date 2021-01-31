@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float moveSpeed;
-    public float life;
-    public float damage;
+
+    public float enemyMaxHealth;
+    public float enemyCurrentHealth;
 
     private Rigidbody2D myRigidBody;
 
@@ -23,6 +24,10 @@ public class EnemyController : MonoBehaviour
     private Vector3 moveDirection;
 
     private PlayerController player;
+
+    public float temp;
+    private bool immortal;
+    private Renderer mainRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +49,6 @@ public class EnemyController : MonoBehaviour
 
             if(timeToMoveCounter < 0f) {
                 GetComponent<Spawner>().SpawnProjetil(player.transform.position);
-                Debug.Log("Atacou");
                 moving = false;
                 timeBetweenMoveCounter = timeBetweenMove;
             }
@@ -58,5 +62,45 @@ public class EnemyController : MonoBehaviour
                 moveDirection = new Vector3(0f, Random.Range(-1f, 1f) * moveSpeed, 0f);
             }
         }
+    }
+
+    void OnTriggerStay2D(Collider2D other) {
+        if(Input.GetButtonDown("Fire1")) {
+
+            if(other.tag == "mordida") {
+                //rodar a animação da mordida
+                EnemyTakeDamage(2);
+                Debug.Log("Inimigo tomou dano");
+                StartCoroutine(PiscarDano());
+                immortal = true;
+                Invoke("ResetImortal", temp);
+                Vector2 difference = transform.position - other.transform.position;
+                transform.position = new Vector2(transform.position.x - difference.x, transform.position.y - difference.y);
+            }
+            IEnumerator PiscarDano() {
+                for(int i=0; i<temp;i++) {
+                    mainRenderer.enabled = true;
+                    yield return new WaitForSeconds(0.1f);
+                    mainRenderer.enabled = false;
+                    yield return new WaitForSeconds(0.1f);
+                }
+            mainRenderer.enabled = true;
+            }
+        }
+    }
+
+    public void EnemyTakeDamage(int damage) {
+        
+        if(enemyCurrentHealth > 0) {
+            enemyCurrentHealth -= damage;
+            Debug.Log("vida do inimigo: " + enemyCurrentHealth);
+            if(enemyCurrentHealth <= 0) {
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    void resetImmortal() {
+        immortal = false;
     }
 }

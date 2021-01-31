@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8316309476104840107}
   m_Layer: 0
   m_Name: Coronga
-  m_TagString: Untagged
+  m_TagString: projetil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
+  waitToReload: 0
+  reloading: 0
 --- !u!95 &8316309476104840107
 Animator:
   serializedVersion: 3
